@@ -1,24 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 import { useTheme } from '@material-ui/core/styles';
 
 import TextField from '@material-ui/core/TextField'
+import Grid from '@material-ui/core/Grid';
 import Tooltip from '@material-ui/core/Tooltip';
 import FormGroup from '@material-ui/core/FormGroup';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
+
 import DeleteIcon from '@material-ui/icons/DeleteForeverOutlined'
-import Grid from '@material-ui/core/Grid';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
 
 import { respondentOptions } from '../../utils/questionConstant'
 
-import { StyledDialog, ColonText, ButtonAction, StyledDialogTitle } from './QuestionForm.sc'
+import { 
+  StyledDialog, 
+  ColonText, 
+  ButtonAction, 
+  StyledDialogTitle,
+  LabelTextField,
+} from './QuestionForm.sc'
 
 const QuestionForm = (props) => {
   const { 
@@ -50,7 +55,7 @@ const QuestionForm = (props) => {
         <DialogContent dividers>
           <Grid container direction="row" spacing={2}>
             <Grid item xs={2}>
-              <Typography>Question</Typography>
+              <LabelTextField>Question</LabelTextField>
             </Grid>
             <Grid item xs={1}>
               <ColonText>:</ColonText>
@@ -72,7 +77,7 @@ const QuestionForm = (props) => {
 
           <Grid container direction="row" spacing={2}>
             <Grid item xs={2}>
-              <Typography>Respondent Options</Typography>
+              <LabelTextField>Respondent Options</LabelTextField>
             </Grid>
             <Grid item xs={1}>
               <ColonText>:</ColonText>
@@ -146,11 +151,11 @@ const QuestionForm = (props) => {
               {/* checkbox */}
               <FormGroup row>
                 <FormControlLabel
-                  label={<b style={{ color: '#08767a'}}>Allow "None of the above"</b>}
+                  label={<LabelTextField>Allow "None of the above"</LabelTextField>}
                   control={<Checkbox name="allowNone" checked={questItem.allowNone} onChange={handleOnchange(true)} />}
                 />
                 <FormControlLabel
-                  label={<b style={{ color: '#08767a'}}>Shuffle the order</b>}
+                  label={<LabelTextField>Shuffle the order</LabelTextField>}
                   control={<Checkbox  name="shuffleOrder" checked={questItem.shuffleOrder} onChange={handleOnchange(true)} />}
                 />
               </FormGroup>

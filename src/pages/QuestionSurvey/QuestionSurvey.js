@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react'
+import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { connect } from 'react-redux';
-
-import Grid from '@material-ui/core/Grid'
 import { useSnackbar } from 'notistack';
 
-import {
-  List,
-  ListItem,
-  ListItemText,
-  ListItemSecondaryAction,
-} from "@material-ui/core";
+
+import Grid from '@material-ui/core/Grid'
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemText from '@material-ui/core/ListItemText'
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
 import RootRef from "@material-ui/core/RootRef";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/DeleteSweep";
 
@@ -167,7 +166,7 @@ const QuestionSurvey = (props) => {
       props.addNewQuestion(newData)
     }
 
-    await enqueueSnackbar('Question Added !', { variant: 'success' })
+    await enqueueSnackbar(`Question ${isEdit ? 'updated' : 'added'} !`, { variant: 'success' })
     setIsQuestionDialogOpen(false)
 
   }
