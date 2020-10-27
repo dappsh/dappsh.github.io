@@ -237,8 +237,8 @@ const QuestionSurvey = (props) => {
         </NoData> 
       }
 
-      {props.questionData.length > 0 &&    <div>
-        <DragDropContext handleHasDragged={handleHasDragged}>
+     <div>
+        <DragDropContext onDragEnd={handleHasDragged}>
         <Droppable droppableId="droppable">
           {(provided, snapshot) => (
             <RootRef rootRef={provided.innerRef}>
@@ -286,7 +286,7 @@ const QuestionSurvey = (props) => {
       </DragDropContext>
                       
     </div>
-   }
+   
     </Wrapper>
   );
 
