@@ -30,7 +30,7 @@ import {
 
 import { 
   addNewQuestion as addNewQuestionAction, 
-  resetQuestionList as resetQuestionListAction 
+  setQuestionList as setQuestionListAction 
 } from '../../redux/actions/questionList';
 
 
@@ -180,6 +180,7 @@ const QuestionSurvey = (props) => {
   const handleDeleteQuestion = (id) => {
     const newQuestionData = props.questionData.filter(item => item.id !== id)
     props.setQuestionList(newQuestionData);
+    enqueueSnackbar(`Question deleted successfully !`, { variant: 'success' })
    };
  
   //  open dialog to edit question
@@ -302,7 +303,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addNewQuestion: (value) => dispatch(addNewQuestionAction(value)),
-    setQuestionList: (value) =>  dispatch(resetQuestionListAction(value))
+    setQuestionList: (value) =>  dispatch(setQuestionListAction(value))
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(QuestionSurvey)

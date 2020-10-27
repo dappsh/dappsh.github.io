@@ -20,7 +20,7 @@ import { respondentOptions } from '../../utils/questionConstant'
 
 import { StyledDialog, ColonText, ButtonAction, StyledDialogTitle } from './QuestionForm.sc'
 
-const QuestionSurvey = (props) => {
+const QuestionForm = (props) => {
   const { 
     handleDeleteRespondentItem, 
     handleEnterAnswerOption, 
@@ -78,22 +78,22 @@ const QuestionSurvey = (props) => {
               <ColonText>:</ColonText>
             </Grid>
             <Grid item xs={9}>
-              <Grid container spacing={2}>
-                {questItem.respondent.map((respond, index) => {
+                {questItem?.respondent?.map((respond, index) => {
                   return (
-                  <>
+                  <Grid container spacing={2} key={index}>
                     {/* respondent field */}
-                    <Grid item md={4} xs={12} key={respond.id}>
+                    <Grid item md={4} xs={12} key={respond?.id}>
                       <TextField
-                        fullWidth
                         select
+                        fullWidth
+                        variant="outlined"
+                        name="optionValue"
+                        className="respondentOptions"
+                        value={respond.optionValue}
+                        onChange={handleChangeRespondent(index)} 
                         SelectProps={{
                           native: true,
                         }}
-                        variant="outlined"
-                        value={respond.optionValue}
-                        name="optionValue"
-                        onChange={handleChangeRespondent(index)} 
                       >
                         {respondentOptions.map((option) => (
                             <option key={option.value} value={option.value}>
@@ -113,7 +113,7 @@ const QuestionSurvey = (props) => {
                             disableHoverListener
                             >
                             <TextField
-                              autoFocus={index !== 0}
+                              autoFocus={!isEditMode && index !== 0}
                               fullWidth
                               variant="outlined"
                               placeholder="Enter to add more answer option"
@@ -138,12 +138,11 @@ const QuestionSurvey = (props) => {
                       </Grid>
 
                     </Grid>
-                  </>
+                  </Grid>
                     )
                   })
                 }
                 
-              </Grid>
               {/* checkbox */}
               <FormGroup row>
                 <FormControlLabel
@@ -169,7 +168,21 @@ const QuestionSurvey = (props) => {
   );
 }
 
-QuestionSurvey.propTypes = {
+
+QuestionForm.defaultProps = {
+  handleDeleteRespondentItem: () => {},
+  handleEnterAnswerOption: () => {},
+  questItem: {},
+  handleClose: () => {},
+  handleSave: () => {},
+  handleOnchange: () => {},
+  handleChangeRespondent: () => {},
+  setQuestionText: () => {},
+  isOpen: false,
+  isEditMode: false,
+}
+
+QuestionForm.propTypes = {
   handleDeleteRespondentItem: PropTypes.func,
   handleEnterAnswerOption: PropTypes.func,
   questItem: PropTypes.instanceOf(Object),
@@ -178,11 +191,10 @@ QuestionSurvey.propTypes = {
   handleOnchange: PropTypes.func,
   handleChangeRespondent: PropTypes.func,
   setQuestionText: PropTypes.func,
-  question: PropTypes.string,
   isOpen: PropTypes.bool,
   isEditMode: PropTypes.bool,
 }
 
-export default QuestionSurvey
+export default QuestionForm
 
 

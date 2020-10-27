@@ -1,4 +1,4 @@
-import { ADD_QUESTIONS, RESET_QUESTION_LIST} from '../actionType';
+import { ADD_QUESTIONS, SET_QUESTION_LIST} from '../actionType';
 
 const questionList = (state = {
   questions: [],
@@ -12,7 +12,7 @@ const questionList = (state = {
       ...state,
       questions: [...state.questions, payload]
     }
-    case RESET_QUESTION_LIST: 
+    case SET_QUESTION_LIST: 
     return {
       ...state,
       questions: payload
