@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/dappsh.github.io/static/css/main.30043ab9.chunk.css",
-    "main.js": "/dappsh.github.io/static/js/main.f119e512.chunk.js",
-    "main.js.map": "/dappsh.github.io/static/js/main.f119e512.chunk.js.map",
+    "main.js": "/dappsh.github.io/static/js/main.270eeb3c.chunk.js",
+    "main.js.map": "/dappsh.github.io/static/js/main.270eeb3c.chunk.js.map",
     "runtime-main.js": "/dappsh.github.io/static/js/runtime-main.fd839ca4.js",
     "runtime-main.js.map": "/dappsh.github.io/static/js/runtime-main.fd839ca4.js.map",
-    "static/js/2.3f3e1daf.chunk.js": "/dappsh.github.io/static/js/2.3f3e1daf.chunk.js",
-    "static/js/2.3f3e1daf.chunk.js.map": "/dappsh.github.io/static/js/2.3f3e1daf.chunk.js.map",
+    "static/js/2.6ae7ec26.chunk.js": "/dappsh.github.io/static/js/2.6ae7ec26.chunk.js",
+    "static/js/2.6ae7ec26.chunk.js.map": "/dappsh.github.io/static/js/2.6ae7ec26.chunk.js.map",
     "static/js/3.cb7952a0.chunk.js": "/dappsh.github.io/static/js/3.cb7952a0.chunk.js",
     "static/js/3.cb7952a0.chunk.js.map": "/dappsh.github.io/static/js/3.cb7952a0.chunk.js.map",
     "index.html": "/dappsh.github.io/index.html",
     "static/css/main.30043ab9.chunk.css.map": "/dappsh.github.io/static/css/main.30043ab9.chunk.css.map",
-    "static/js/2.3f3e1daf.chunk.js.LICENSE.txt": "/dappsh.github.io/static/js/2.3f3e1daf.chunk.js.LICENSE.txt"
+    "static/js/2.6ae7ec26.chunk.js.LICENSE.txt": "/dappsh.github.io/static/js/2.6ae7ec26.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fd839ca4.js",
-    "static/js/2.3f3e1daf.chunk.js",
+    "static/js/2.6ae7ec26.chunk.js",
     "static/css/main.30043ab9.chunk.css",
-    "static/js/main.f119e512.chunk.js"
+    "static/js/main.270eeb3c.chunk.js"
   ]
 }
